@@ -20,17 +20,20 @@ public class IncomeTax extends Bonus {
      * Modifie la fortune du joueur : -10% de sa fortune, plafonné à 200$
      */
     public void action(Joueur player) {
+        int montant_paye;
         if (player.getFortune() * 0.1 < 200) {
+            montant_paye = (int) (player.getFortune() * 0.1);
+            player.setFortune(player.getFortune()-montant_paye); 
+        } else {
+            montant_paye =200;
             player.setFortune(player.getFortune() - 200);
             
-        } else {
-            player.setFortune((int) (player.getFortune() * 0.9));
         }
-
+        System.out.println(player+" paye l'impôt sur le revenu, et perd "+montant_paye+"$");
     }
 
     public String toString() {
-        String res = "Vous payez l'impôt sur le revenu (200$ ou 10% de votre fortune)";
+        String res = "Impôt sur le revenu";
         return res;
     }
 }

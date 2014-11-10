@@ -52,11 +52,12 @@ public class Parking extends Bonus {
 
     public void action(Joueur player) {
         player.setFortune(player.getFortune() + montant);
+        System.out.println(player +" s'est arrêté sur la case parking, et touche "+montant+"$");
         montant = 0;
     }
 
     public String toString() {
-        String res = "Vous ramassez l'argent déposé au parking (" + montant + "), le montant du parking est remis à 0";
+        String res = "Parking";
         return res;
     }
 }
