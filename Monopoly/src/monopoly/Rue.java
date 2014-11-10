@@ -54,7 +54,7 @@ public class Rue extends CaseAchetable {
     
     
     public int calcLoyer(){
-        float c=position/10;
+        float c=getPosition()/10;
         int a=(int) c; //coefficient du cout en fonction de la position    
         int b=1000;//coefficient du cout en fonction des maisons et hotel
  
@@ -70,4 +70,14 @@ public class Rue extends CaseAchetable {
         return cout;
     }
     
+    
+    public void toString(){
+        if(proprietaire==null){
+            System.out.println(getNom()+" (coût : "+prix+" )  - sans propriétaire");
+        }
+        else{
+            System.out.println(getNom()+" (coût : "+prix+" )  - propriétaire : " + proprietaire.getNom()+
+                    ", "+nMaison+" maisons"+", loyer = "+calcLoyer());
+        }
+    }
 }
