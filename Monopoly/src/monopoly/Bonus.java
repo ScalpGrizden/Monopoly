@@ -1,14 +1,29 @@
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
+ * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
 package monopoly;
 
 /**
  *
- * @author Johan
+ * @author rmeyer
  */
-public class Bonus extends Case{
+public abstract class Bonus {
+    private int position;
+    private String nom;
+    /*
+     * @param nom le nom de la case Bonus
+     * @param position la position de la case Bonus
+     */
+    public Bonus(String nom,int position){
+        this.nom=nom;
+        this.position=position;
+    }
     
+    //Action à déclencher lorsque le joueur passe sur la case Bonus
+    /*
+     * @param player le joueur qui est tombé sur la case bonus
+     */
+    public abstract void action(Joueur player );
+
 }
