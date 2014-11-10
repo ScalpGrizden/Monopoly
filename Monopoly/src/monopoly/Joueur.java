@@ -8,7 +8,7 @@ import java.util.LinkedList;
  */
 public class Joueur {
     private String nom;
-    private int position;
+    private Case caseActuelle;
     private int fortune;
     private LinkedList<CaseAchetable> propriete;
     private boolean enPrison;
@@ -18,20 +18,19 @@ public class Joueur {
    
    Joueur(){
     nom = new String();
-    position=0;
     fortune=100000;
     propriete=null;
     enPrison=false;
     jourEnPrison=0;
     plateauJeu=new Plateau();
-    
+    caseActuelle=new Depart();
    } 
    
    public String getNom(){
        return this.nom;
    }
-   public int getPosition(){
-       return this.position;
+   public Case getCaseActuelle(){
+       return this.caseActuelle;
    }
    public int getFortune(){
        return this.fortune;
@@ -52,8 +51,8 @@ public class Joueur {
         this.nom = nom;
     }
 
-    public void setPosition(int position) {
-        this.position = position;
+    public void setCaseActuelle(Case c) {
+        this.caseActuelle = c;
     }
 
     public void setFortune(int fortune) {
@@ -97,15 +96,29 @@ public class Joueur {
             throw(new NoMoreMoneyException());
         }
     }
-    /**Méthode permettant d'acheter une maison ou un utilitaire
-     * @param c de type CaseAchetable
-     */
-    public void acheter( CaseAchetable c) throws NoMoreMoneyException{
+    public void payerJoueur(Joueur j, int somme)throws NoMoreMoneyException{
+        this.payer(somme);
+        j.gagnerArgent(somme);
+    }
+
+    public void acheter(CaseAchetable c)throws NoMoreMoneyException{
         this.propriete.add(c);
         payer(c.getPrix());
         c.setProprietaire(this); 
     }
     public static int lanceLeDe(){
         return ((int)Math.floor(Math.random()*6))+1;
+    }
+    public void tourDeJeu()throws NoMoreMoneyException{
+        this.caseActuelle = this.plateauJeu.avance(caseActuelle, lanceLeDe());
+        System.out.println("Le Joueur " + this.nom + " est en ");
+        if(caseActuelle instanceof CaseAchetable){
+            if(((CaseAchetable) caseActuelle).getProprietaire() == null){
+                this.acheter((CaseAchetable)caseActuelle);
+            }
+        }
+        else{
+            this.payerJoueur(((CaseAchetable)caseActuelle).getProprietaire(), ((CaseAchetable)caseActuelle).calcLoyer());
+        }
     }
 }

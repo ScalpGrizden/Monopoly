@@ -11,14 +11,27 @@ public class Plateau {
   
     // CONSTRUCTEURS
     public Plateau () {
-        this.listeCases=new ArrayList<Case>(40);
+        this.listeCases=initPlateau();
         this.listeJoueurs= new LinkedList<Joueur>();
         partieTerminee=false;
+        
     }
     public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
         partieTerminee=false;
+    }
+    
+    public void ajoutCase(Case c) {
+        listeCases.add(c.getPosition(),c);
+    }
+
+    
+    public ArrayList<Case> initPlateau(){
+        ArrayList<Case> l=new ArrayList<Case>(40);
+        l.add(12, new Utilitaire("Electric Company",12,15000));
+        l.add(26, new Utilitaire("Water Works",26,15000));
+        return l;
     }
 
     //GETTERS & SETTERS
@@ -78,10 +91,10 @@ public class Plateau {
     public void partie(){
         while(!finDePartie()){
             for(Joueur j : listeJoueurs){
-                j.tourDeJeu();
+                try{j.tourDeJeu();}
                 
                 //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
-                catch (NoMoreMoney){
+                catch (NoMoreMoneyException n){
                     listeJoueurs.remove(j);
                     System.out.println( j.getNom() +" est un loooooooooser(une chiasse)");
                 }
