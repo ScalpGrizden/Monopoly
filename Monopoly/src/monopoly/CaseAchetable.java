@@ -2,7 +2,7 @@ package monopoly;
 
 abstract class CaseAchetable extends Case {
     
-    private Joueur proprietaire;
+    protected Joueur proprietaire;
     private int prix;
     boolean isHypotheque;
     
