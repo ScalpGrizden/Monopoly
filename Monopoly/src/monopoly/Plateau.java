@@ -71,11 +71,13 @@ public class Plateau {
     public void tourDeJeu(){
         while(!finDePartie()){
             for(Joueur j : listeJoueurs){
-                j.tourDeJeu();
-            }
-            //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
-            catch (NoMoreMoney){
+                try{ j.tourDeJeu(); }
+                catch (NoMoreMoneyException n){
                 listeJoueurs.remove(j); 
             }
+            };
+            }
+            //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
+            
         }
 }
