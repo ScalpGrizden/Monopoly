@@ -18,6 +18,7 @@ public class Joueur {
     private boolean enPrison;
     private int jourEnPrison;
     private Plateau plateauJeu;
+    private int nbUtilitaires
    
    Joueur(){
     nom = new String();
@@ -26,6 +27,8 @@ public class Joueur {
     propriete=null;
     enPrison=false;
     jourEnPrison=0;
+    plateauJeu=new Plateau();
+    
    } 
    
    public String getNom(){
@@ -46,7 +49,9 @@ public class Joueur {
    public int getJourEnPrison(){
        return this.jourEnPrison;
    }
-
+   public Plateau getPlateau(){
+       return this.plateauJeu;
+   }
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -70,11 +75,26 @@ public class Joueur {
     public void setJourEnPrison(int jourEnPrison) {
         this.jourEnPrison = jourEnPrison;
     }
+    public void setPlateau(Plateau p){
+        this.plateauJeu=p;
+    }
     public void ajouterJourEnPrison(){
         this.jourEnPrison=jourEnPrison+1;
     }
-    public int paiement(Joueur j1,int somme){
+    public void paiement(int somme){
+        
+    }
+    public void paiementJoueur(Joueur j1,int somme){
         this.fortune-=somme;
         j1.fortune+=somme;
+    }
+    public void paiementBanque(int somme){
+        
+    }
+    public void acheter( CaseAchetable case){
+        
+    }
+    public static int lanceLeDe(){
+        return ((int)Math.florr(Math.random()*6))+1;
     }
 }
