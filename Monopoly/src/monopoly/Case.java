@@ -9,5 +9,9 @@ package monopoly;
  * @author rlebail
  */
 public class Case {
+    private String nom;
+    private int position;
+    
+    
     
 }

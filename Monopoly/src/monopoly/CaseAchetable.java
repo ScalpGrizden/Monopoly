@@ -8,6 +8,15 @@ package monopoly;
  *
  * @author rlebail
  */
-public class CaseAchetable {
+abstract class CaseAchetable extends Case {
     
+    CaseAchetable(String nom, int position, boolean isHypotheque){
+        super(nom, position, isHypotheque);
+    }
+    
+    abstract void action(Joueur);
+    abstract void acheter(Joueur);
+    abstract boolean hypothequer();
+    abstract int calcLoyer();
+   
 }

@@ -1,13 +1,25 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package monopoly;
 
-/**
- *
- * @author rlebail
- */
-public class Utilitaires {
+import java.util.Random;
+
+public class Utilitaire extends CaseAchetable {
+    
+    public Utilitaire () {
+        super();
+    }
+    
+    public int loyer () {
+        Random n = new Random();
+        int de = 1 + n.nextInt(5);
+        int nbUtilitaires = proprietaire.nbUtilitaires();
+        
+        if (nbUtilitaires == 1) {
+            return(200*de);
+        }
+        
+        else {
+            return(500*de);
+        }
+    }
     
 }
