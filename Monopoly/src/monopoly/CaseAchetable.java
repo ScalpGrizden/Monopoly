@@ -41,7 +41,7 @@ abstract class CaseAchetable extends Case {
     
     public void hypotheque() {
         if (isHypotheque) {
-            proprietaire.payer(prix/2);
+            proprietaire.paiementBanque(prix/2);
             isHypotheque = false;
         }
         else {
@@ -59,8 +59,7 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                player.payer(calcLoyer());
-                proprietaire.gagner(calcLoyer());
+                player.paiementJoueur(proprietaire,calcLoyer());
             }
         }
     }
