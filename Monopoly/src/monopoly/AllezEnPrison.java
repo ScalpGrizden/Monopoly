@@ -21,7 +21,7 @@ public class AllezEnPrison extends Bonus {
     */
     @Override
     public void action(Joueur j){
-        j.setPosition(10);
+        j.setPosition(j.getPlateau().getListeCases().get(10));
         j.setEnPrison(true);
         System.out.println(j.getNom()+ " va en Prison, sans passer par la case Départ.");
     }
