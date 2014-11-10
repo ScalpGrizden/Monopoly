@@ -28,7 +28,10 @@ public class Plateau {
 
     
     public ArrayList<Case> initPlateau(){
-        ArrayList<Case> l=new ArrayList<Case>(40);
+        ArrayList<Case> l=new ArrayList(40);
+        for(int i=0;i<40;++i){
+            l.add(null);
+        }
         l.set(1, new Rue("rue de la distilerie",1,8000, 800));
         l.set(3, new Rue("rue du pilori", 3, 10000, 800));
         l.set(6, new Rue("rue Jeanne D'Arc",6,11000, 800));
