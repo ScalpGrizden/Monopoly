@@ -15,7 +15,15 @@ public class CarteCaisseCommunautaire {
     boolean prison;
     
     
-    void effet(Joueur);
+    void action(Joueur j){
+        
+        j.fortune = j.fortune+argent;
+        j.position = j.position+position;
+        
+        if (prison) {
+            j.position = 10;
+            j.enPrison = true;}
+    }
     
     public CarteCaisseCommunautaire(String d, int argent, int position, boolean prison) {
         description = d;
