@@ -20,7 +20,7 @@ public class Utilitaire extends CaseAchetable {
             Iterator propriete = proprietes.iterator();
             while (propriete.hasNext())
             {
-                if (propriete.getClass().getName() == "Utilitaire"){
+                if ("Utilitaire".equals(propriete.getClass().getName())){
                     nbUtilitaires = nbUtilitaires + 1;
                 }
             }
