@@ -25,14 +25,14 @@ public class CarteCaisseCommunautaire {
             j.enPrison = true;}
     }
     
-    public CarteCaisseCommunautaire(String d, int argent, int position, boolean prison) {
-        description = d;
+    public CarteCaisseCommunautaire(int argent, int position, boolean prison) {
+        description = createDescription(argent,position,prison);
         this.argent=argent;
         this.position=position;
         this.prison=prison;     
     }
     
-    private String createDesciption(int argent, int position, boolean prison) {
+    private String createDescription(int argent, int position, boolean prison) {
         String Str;
         if (argent>0) {
          Str="Erreur de la banque en votre faveur, recevez "+argent+" euros."; 
