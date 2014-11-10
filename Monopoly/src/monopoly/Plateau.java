@@ -8,20 +8,34 @@ public class Plateau {
     private ArrayList<Case> listeCases;
     private LinkedList<Joueur> listeJoueurs;
     private Boolean partieTerminee;
-    
-    
   
+    // CONSTRUCTEURS
+    public Plateau () {
+        this.listeCases=new ArrayList<Case>(40);
+        this.listeJoueurs= new LinkedList<Joueur>();
+        partieTerminee=false;
+    }
     public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
         partieTerminee=false;
     }
-    
-    public Plateau () {
-        this.listeCases=new ArrayList<Case>(40);
-        this.listeJoueurs= new LinkedList<Joueur>();
+
+    //GETTERS & SETTERS
+    public ArrayList<Case> getListeCases() {
+        return listeCases;
     }
+    public void setListeCases(ArrayList<Case> listeCases) {
+        this.listeCases = listeCases;
+    }
+    public LinkedList<Joueur> getListeJoueurs() {
+        return listeJoueurs;
+    }
+    public void setListeJoueurs(LinkedList<Joueur> listeJoueurs) {
+        this.listeJoueurs = listeJoueurs;
+    }  
     
+    //
     public int nbGares(Joueur j) {
         int nbGares=0;
         for (Case c : listeCases) {
