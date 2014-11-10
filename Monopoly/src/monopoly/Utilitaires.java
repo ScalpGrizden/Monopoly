@@ -9,16 +9,23 @@ public class Utilitaire extends CaseAchetable {
     }
     
     public int loyer () {
-        Random n = new Random();
-        int de = 1 + n.nextInt(5);
-        int nbUtilitaires = proprietaire.nbUtilitaires();
         
-        if (nbUtilitaires == 1) {
-            return(200*de);
+        if (proprietaire == NULL){
+            return(0);
         }
         
         else {
-            return(500*de);
+            Random n = new Random();
+            int de = 1 + n.nextInt(5);
+            int nbUtilitaires = proprietaire.nbUtilitaires();
+        
+            if (nbUtilitaires == 1) {
+                return(200*de);
+            }
+        
+            else {
+                return(500*de);
+            }
         }
     }
     
