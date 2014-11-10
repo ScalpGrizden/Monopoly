@@ -63,8 +63,12 @@ public class Plateau {
         l.add(7,new Chance("Chance",7));
         l.add(22,new Chance("Chance",22));
         l.add(36,new Chance("Chance",36));
-        l.add(4, new IncomeTax());
-        l.add(38, new LuxuryTax());
+        l.add(20,new Parking()); //position 20
+        l.add(4,new IncomeTax()); //position 4
+        l.add(38,new LuxuryTax ()); //position 38
+        l.add(10,new Prison()); //position 10
+        l.add(30,new AllezEnPrison()); //position 30
+        l.add(0,new Depart()); // position 0
         
         return l;
     }
