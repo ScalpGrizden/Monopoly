@@ -15,7 +15,7 @@ public class CarteCaisseCommunautaire {
     boolean prison;
     
     
-    void action(Joueur j){
+    void effet(Joueur j){
         
         j.setFortune(j.getFortune()+argent);
         j.setPosition(j.getPosition()+position);

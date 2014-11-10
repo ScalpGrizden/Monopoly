@@ -2,7 +2,7 @@ package monopoly;
 
 abstract class CaseAchetable extends Case {
     
-    private Joueur proprietaire;
+    protected Joueur proprietaire;
     private int prix;
     boolean isHypotheque;
     
@@ -62,8 +62,7 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                player.payer(calcLoyer());
-                proprietaire.gagner(calcLoyer());
+                player.paiementJoueur(proprietaire,calcLoyer());
             }
         }
     }

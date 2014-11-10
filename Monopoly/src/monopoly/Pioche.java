@@ -8,6 +8,8 @@ package monopoly;
  *
  * @author rlebail
  */
-public class Pioche extends Bonus {
-    
+public abstract class Pioche extends Bonus {
+    public Pioche(String nom, int position) {
+        super(nom, position);
+    }
 }
