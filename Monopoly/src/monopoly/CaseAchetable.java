@@ -42,7 +42,6 @@ abstract class CaseAchetable extends Case {
     
     public void hypotheque() {
         if (isHypotheque) {
-            proprietaire.paiementBanque(prix/2);
             proprietaire.setFortune(proprietaire.getFortune()-prix/2);
             isHypotheque = false;
         }
