@@ -22,9 +22,9 @@ public class Chance extends Pioche {
        listeCartesChance.add(c1);
        CarteChance c2= new CarteChance(0,2,false);
        listeCartesChance.add(c2);
-       CarteChance c3= new CarteChance(0,-1,false);
+       CarteChance c3= new CarteChance(0,-3,false);
        listeCartesChance.add(c3);
-       CarteChance c4= new CarteChance(0,-2,false);
+       CarteChance c4= new CarteChance(0,-1,false);
        listeCartesChance.add(c4);
        CarteChance c5= new CarteChance(2000,0,false);
        listeCartesChance.add(c5);
