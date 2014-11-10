@@ -31,22 +31,22 @@ public class Utilitaire extends CaseAchetable {
     
     public String toString(){
         
-        Joueur proprietaire = getProprietaire();
+        Joueur proprio = getProprietaire();
         
-        if (proprietaire == null){
+        if (proprio == null){
             return(getNom() + " coût : " + getPrix() + " - sans propriétaire");
         }
         
         else {
-            return(getNom() + " coût : " + getPrix() + " - " + proprietaire.getNom());
+            return(getNom() + " coût : " + getPrix() + " - " + proprio.getNom());
         }
     }
     
     public int calcLoyer () {
         
-        Joueur proprietaire = getProprietaire();
+        Joueur proprio = getProprietaire();
         
-        if (proprietaire == null){
+        if (proprio == null){
             return(0);
         }
         
