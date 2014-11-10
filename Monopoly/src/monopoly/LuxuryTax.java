@@ -15,9 +15,12 @@ public class LuxuryTax extends Bonus{
     public LuxuryTax(String nom, int position) {
         super(nom,position);
     }
+    /*
+     * Retire 75$ de la fortune du joueur
+     */
     public void action(Joueur player)
     {
-        //Ajouter méthode permettant de retirer 75 $ de l'argent du joueur 
+        player.setFortune(player.getFortune()-75);
     }
     public String toString(){
         String res="Vous payez la taxe de luxe(75$)";
