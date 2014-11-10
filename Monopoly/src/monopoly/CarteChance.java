@@ -18,22 +18,24 @@ public class CarteChance {
     
     
     
-    CarteChance(String t, String d, int a, int pos, boolean pri) {
+    CarteChance(String t, String d, int a, int pos, boolean prizzoooooon) {
         titre = t;
         description = d;
         position = pos;
         argent = a;
-        prison = pri;
+        prison = prizzoooooon;
         
     }
     
-    void effet(Joueur, PlateauJeu) {
+    void effet(Joueur j, Plateau p) {
         
-        Joueur.fortune = Joueur.fortune+argent;
-        Joueur.position = Joueur.position+position;
+        j.fortune = j.fortune+argent;
+        j.position = j.position+position;
         
         if (prison) {
-            Joueur.position = 10;
+            j.position = 10;
+            j.enPrison = true;
+            
         }
         
     }
