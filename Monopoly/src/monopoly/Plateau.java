@@ -30,7 +30,7 @@ public class Plateau {
 
     
     public ArrayList<Case> initPlateau(){
-        ArrayList<Case> l=new ArrayList<Case>(40);
+        ArrayList<Case> l=new ArrayList<Case>();
         l.add(1, new Rue("rue de la distilerie",1,8000, 800));
         l.add(3, new Rue("rue du pilori", 3, 10000, 800));
         l.add(6, new Rue("rue Jeanne D'Arc",6,11000, 800));
@@ -51,7 +51,7 @@ public class Plateau {
         l.add(31, new Rue("rue du calvaire", 31, 21000, 1500));
         l.add(32, new Rue("rue Jean De La Fontaine", 32, 21000, 1500));
         l.add(34, new Rue("rue Dominique Strauss-Kahn", 34, 22000, 1500));
-        l.add(37,  new Rue("rue du lapin nain", 37, 25000, 1500));
+        l.add(37, new Rue("rue du lapin nain", 37, 25000, 1500));
         l.add(39, new Rue("rue de la chenille carnivore", 39, 27000, 1500));
         l.add(12, new Utilitaire("Electric Company",12,15000));
         l.add(26, new Utilitaire("Water Works",26,15000));
