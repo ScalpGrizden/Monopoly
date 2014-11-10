@@ -21,9 +21,10 @@ public class LuxuryTax extends Bonus{
     public void action(Joueur player)
     {
         player.setFortune(player.getFortune()-75);
+        System.out.println(player+" paye la taxe de luxe, et perd 75$");
     }
     public String toString(){
-        String res="Vous payez la taxe de luxe(75$)";
+        String res="Taxe de luxe";
         return res;
     }
 }
