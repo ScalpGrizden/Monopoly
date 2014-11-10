@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package monopoly;
 
 import java.util.LinkedList;
@@ -18,7 +14,7 @@ public class Joueur {
     private boolean enPrison;
     private int jourEnPrison;
     private Plateau plateauJeu;
-    private int nbUtilitaires
+    private int nbUtilitaires;
    
    Joueur(){
     nom = new String();
@@ -91,10 +87,14 @@ public class Joueur {
     public void paiementBanque(int somme){
         
     }
-    public void acheter( CaseAchetable case){
+    /**
+     *
+     * @param c
+     */
+    public void acheter( CaseAchetable c){
         
     }
     public static int lanceLeDe(){
-        return ((int)Math.florr(Math.random()*6))+1;
+        return ((int)Math.floor(Math.random()*6))+1;
     }
 }
