@@ -62,7 +62,20 @@ public class Plateau {
     }
     
     public Boolean finDePartie(){
-        partieTerminee=true;
+        if (listeJoueurs.size()==1){
+            partieTerminee=true;
+        }
         return (partieTerminee);
     }
+    
+    public void tourDeJeu(){
+        while(!finDePartie()){
+            for(Joueur j : listeJoueurs){
+                j.tourDeJeu();
+            }
+            //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
+            catch (NoMoreMoney){
+                listeJoueurs.remove(j); 
+            }
+        }
 }

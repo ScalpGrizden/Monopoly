@@ -4,13 +4,15 @@
  */
 package monopoly;
 
+import java.lang.Math;
+
 /**
  *
  * @author rlebail
  */
 public class Gare extends CaseAchetable {
     
-    private final int COEFGARE = 492;
+    private final int COEFGARE = 25;
     
     public Gare(String nom, int position, int prix) {
         super(nom, position, prix);
@@ -18,7 +20,7 @@ public class Gare extends CaseAchetable {
     
     @Override
     public int calcLoyer() {
-        return (this.getProprietaire().getPlateau().nbGares(this.getProprietaire()) * COEFGARE);
+        return (int)(Math.pow(2,this.getProprietaire().getPlateau().nbGares(this.getProprietaire())) * COEFGARE);
     }
     
     @Override

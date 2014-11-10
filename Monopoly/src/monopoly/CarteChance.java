@@ -27,7 +27,7 @@ public class CarteChance {
         
     }
     
-    void effet(Joueur j, Plateau p) {
+    void effet(Joueur j) {
         
         j.setFortune(j.getFortune()+argent);
         j.setPosition(j.getPosition() +position);
