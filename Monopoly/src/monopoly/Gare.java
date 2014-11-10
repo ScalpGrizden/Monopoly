@@ -10,7 +10,7 @@ package monopoly;
  */
 public class Gare extends CaseAchetable {
     
-    private final int COEFGARE = 492;
+    private final int COEFGARE = 2500;
     
     public Gare(String nom, int position, int prix) {
         super(nom, position, prix);
@@ -18,7 +18,7 @@ public class Gare extends CaseAchetable {
     
     @Override
     public int calcLoyer() {
-        return (this.getProprietaire().getPlateau().nbGares(this.getProprietaire()) * COEFGARE);
+        return (int)(this.getProprietaire().getPlateau().nbGares(this.getProprietaire()) * COEFGARE);
     }
     
     @Override

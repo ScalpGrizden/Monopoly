@@ -15,7 +15,8 @@ import java.util.Random;
 public class CaisseCommunautaire extends Pioche{
     ArrayList<CarteCaisseCommunautaire> listeCartesCaisseCommunautaire;
     
-    public CaisseCommunautaire(){
+    public CaisseCommunautaire(String nom, int position){
+        super("Caisse Communautaire",position);
        listeCartesCaisseCommunautaire= new ArrayList<CarteCaisseCommunautaire>();
        for (int i=0;i<2;i++){
            /* 2 cartes prison, 8 argent, 6 position) */
@@ -55,7 +56,8 @@ public class CaisseCommunautaire extends Pioche{
        
     }
     
-  public void action(Joueur j, Plateau p){
+    @Override
+  public void action(Joueur j){
       Random position = new Random();
       CarteCaisseCommunautaire carte= listeCartesCaisseCommunautaire.get(position.nextInt(listeCartesCaisseCommunautaire.size()));
       carte.effet(j);

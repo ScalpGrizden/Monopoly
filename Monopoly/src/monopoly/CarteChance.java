@@ -10,7 +10,7 @@ package monopoly;
  */
 public class CarteChance {
     
-    String titre;
+    
     String description;
     int argent;
     int position;
@@ -18,8 +18,8 @@ public class CarteChance {
     
     
     
-    public CarteChance(String t, int a, int pos, boolean prizzoooooon) {
-        titre = t;
+    public CarteChance( int a, int pos, boolean prizzoooooon) {
+      
         description = this.createDescription(a, pos, prizzoooooon);
         position = pos;
         argent = a;
