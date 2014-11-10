@@ -86,6 +86,10 @@ public class Plateau {
                     System.out.println( j.getNom() +" est un loooooooooser(une chiasse)");
                 }
             }
+            };
+            }
+            //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
+            
         }
     }
 
