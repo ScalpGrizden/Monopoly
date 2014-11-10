@@ -1,22 +1,68 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package monopoly;
-
-/**
- *
- * @author rlebail
- */
 abstract class CaseAchetable extends Case {
     
-    CaseAchetable(String nom, int position, boolean isHypotheque){
-        super(nom, position, isHypotheque);
+    private Joueur proprietaire;
+    private int prix;
+    Boolean isHypotheque;
+    
+    
+    public CaseAchetable(String nom, int position, int prx) {
+        super(nom, position);
+        prix = prx;
+        proprietaire = null;
     }
     
-    abstract void action(Joueur);
-    abstract void acheter(Joueur);
-    abstract boolean hypothequer();
-    abstract int calcLoyer();
-   
+    public Joueur getProprietaire() {
+        return proprietaire;
+    }
+    
+    public void setProprietaire(Joueur prop) {
+        proprietaire = prop;
+    }
+    
+    public int getPrix () {
+        return prix;
+    }
+    
+    public void setPrix (int n){
+        prix = n;
+    }
+    
+    public Boolean isHypotheque() {
+        return isHypotheque;
+    }
+    
+    public void acheter(Joueur player) {
+        proprietaire = player;
+        player.acheter(this);
+        
+    }
+    
+    public void hypotheque() {
+        if (isHypotheque) {
+            proprietaire.payer(prix/2);
+            isHypotheque = false;
+        }
+        else {
+            proprietaire.gagner(prix/2);
+            isHypotheque = true;
+        }
+    }
+    
+    public void action(Joueur player){
+        if (proprietaire == null){
+            // proposer d'acheter?
+        }
+        else {
+            if (proprietaire == player){
+                // proposer d'acheter des maisons
+            }
+            else {
+                player.payer(calcLoyer());
+                proprietaire.gagner(calcLoyer());
+            }
+        }
+    }
+    
+    public abstract int calcLoyer();
+    
 }
