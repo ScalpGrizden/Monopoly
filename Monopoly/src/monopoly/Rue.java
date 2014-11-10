@@ -14,8 +14,8 @@ public class Rue extends CaseAchetable {
     int prixMaison;
     boolean hotel;
     
-    Rue(String nom, int position, int prix, boolean isHypotheque,Joueur proprietaire, int nM, int prixM, boolean hotel){
-        super(nom, position, prix, isHypotheque, proprietaire);
+    Rue(String nom, int position, int prix, int nM, int prixM, boolean hotel){
+        super(nom, position, prix);
         nMaison=nM;
         prixMaison=prixM;
         this.hotel=hotel;
