@@ -8,7 +8,7 @@ package monopoly;
  *
  * @author rlebail
  */
-public class Case {
+public abstract class Case {
     private String nom;
     private int position;
 
@@ -25,4 +25,6 @@ public class Case {
     public void setPosition(int position) {
         this.position = position;
     }
+    
+    abstract public void action(Joueur j);
 }
