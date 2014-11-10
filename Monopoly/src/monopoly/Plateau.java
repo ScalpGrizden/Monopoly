@@ -11,14 +11,27 @@ public class Plateau {
   
     // CONSTRUCTEURS
     public Plateau () {
-        this.listeCases=new ArrayList<Case>(40);
+        this.listeCases=initPlateau();
         this.listeJoueurs= new LinkedList<Joueur>();
         partieTerminee=false;
+        
     }
     public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
         partieTerminee=false;
+    }
+    
+    public void ajoutCase(Case c) {
+        listeCases.add(c.getPosition(),c);
+    }
+
+    
+    public void initPlateau(){
+        ArrayList<Case> l=new ArrayList<Case>(40);
+        l.add(12, new Utilitaire("Electric Company",12,15000));
+        l.add(26, new Utilitaire("Water Works",26,15000));
+        
     }
 
     //GETTERS & SETTERS
