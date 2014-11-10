@@ -31,5 +31,5 @@ public Case(String nom, int pos) {
         this.position = position;
     }
     
-    abstract public void action(Joueur j);
+    abstract public void action(Joueur j) throws NoMoreMoneyException;
 }
