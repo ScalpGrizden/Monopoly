@@ -22,7 +22,7 @@ public abstract class Case {
     public int getPosition() {
         return position;
     }
-    public void setPosition(int position) {
+    private void setPosition(int position) {
         this.position = position;
     }
     
