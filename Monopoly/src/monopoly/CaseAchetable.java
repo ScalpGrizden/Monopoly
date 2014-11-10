@@ -4,7 +4,8 @@ abstract class CaseAchetable extends Case {
     
     private Joueur proprietaire;
     private int prix;
-    Boolean isHypotheque;
+    boolean isHypotheque;
+    
     
     
     public CaseAchetable(String nom, int position, int prx) {
@@ -35,7 +36,7 @@ abstract class CaseAchetable extends Case {
     
     public void acheter(Joueur player) {
         proprietaire = player;
-        player.acheter(this);
+        player.setFortune(player.getFortune()-prix);//le joueur doit payer pour acheter la propriete
         
     }
     
@@ -49,6 +50,8 @@ abstract class CaseAchetable extends Case {
             isHypotheque = true;
         }
     }
+    
+    
     
     public void action(Joueur player){
         if (proprietaire == null){
