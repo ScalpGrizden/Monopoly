@@ -12,10 +12,6 @@ public class Gare extends CaseAchetable {
     
     private final int COEFGARE = 492;
     
-    public Gare() {
-        super();
-    }
-    
     public Gare(String nom, int position, int prix) {
         super(nom, position, prix);
     }
