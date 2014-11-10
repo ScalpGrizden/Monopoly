@@ -12,6 +12,7 @@ abstract class CaseAchetable extends Case {
         super(nom, position);
         prix = prx;
         proprietaire = null;
+        isHypotheque = false;
     }
     
     public Joueur getProprietaire() {
