@@ -12,12 +12,21 @@ public class CarteChance {
     
     String titre;
     String description;
+    int argent;
+    int position;
+    boolean prison;
     
-    void effet(Joueur, PlateauJeu);
+    
     
     CarteChance(String t, String d) {
         titre = t;
         description = d;
+        
+    }
+    
+    void effet(Joueur, PlateauJeu) {
+        
+        
         
     }
     
