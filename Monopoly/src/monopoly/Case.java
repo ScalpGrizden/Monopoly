@@ -10,7 +10,7 @@ package monopoly;
  */
 public abstract class Case {
     private String nom;
-    private int position;
+    protected int position;
 
     public String getNom() {
         return nom;
