@@ -24,6 +24,7 @@ public class Prison extends Bonus{
      * Si le joueur n'est pas emprisonné, rien ne se passe.
      * @param j 
      */
+    @Override
     public void action(Joueur j){
         if (j.getEnPrison() && j.getJourEnPrison()<= 3){
             int de1, de2;
@@ -35,7 +36,8 @@ public class Prison extends Bonus{
                 System.out.println("Vous avez fait :"+de1+" : "+de2+"\nVous sortez de prison!");
             }
             else{
-                j.setNbJoursEnPrison(j.getJourEnPrison()++);
+                int nbJour =j.getJourEnPrison();
+                j.setJourEnPrison(nbJour++);
                 System.out.println("Vous avez fait :"+de1+" : "+de2+"\nVous restez en prison!");
             }
         }
