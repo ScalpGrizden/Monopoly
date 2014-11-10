@@ -10,4 +10,15 @@ package monopoly;
  */
 public class CarteChance {
     
+    String titre;
+    String description;
+    
+    void effet(Joueur, PlateauJeu);
+    
+    CarteChance(String t, String d) {
+        titre = t;
+        description = d;
+        
+    }
+    
 }
