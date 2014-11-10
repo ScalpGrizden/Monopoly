@@ -8,18 +8,20 @@ public class Plateau {
     private ArrayList<Case> listeCases;
     private LinkedList<Joueur> listeJoueurs;
     private Boolean partieTerminee;
+    private int nbTour;
   
     // CONSTRUCTEURS
     public Plateau () {
         this.listeCases=initPlateau();
         this.listeJoueurs= new LinkedList<Joueur>();
         partieTerminee=false;
-        
+        nbTour=0;
     }
     public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
         partieTerminee=false;
+        nbTour=0;
     }
     
     public void ajoutCase(Case c) {
@@ -99,13 +101,16 @@ public class Plateau {
     }
     
     public void affiche() {
+        System.out.println("Tour n°"+nbTour);
+        
         for (Case c : listeCases) {
             System.out.println(c.toString()+"\n");
         }
         
         //TODO afficher les joueurs
         for (Joueur j : listeJoueurs) {
-            System.out.println(j.toString()+"\n");
+            
+            System.out.println(j.getNom()+ " possède "+ j.getFortune() + "€ \n");
         }
     }
     
@@ -129,6 +134,8 @@ public class Plateau {
     
     public void partie(){
         while(!finDePartie()){
+            nbTour++;
+            affiche();
             for(Joueur j : listeJoueurs){
                 try{j.tourDeJeu();}
                 
@@ -138,11 +145,7 @@ public class Plateau {
                     System.out.println( j.getNom() +" est un loooooooooser(une chiasse)");
                 }
             }
-            };
-            }
-            //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
-            
         }
     }
-
+            
 }
