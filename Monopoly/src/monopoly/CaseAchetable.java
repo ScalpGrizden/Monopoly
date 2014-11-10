@@ -62,8 +62,7 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                player.payer(calcLoyer());
-                proprietaire.gagner(calcLoyer());
+                player.paiementJoueur(proprietaire,calcLoyer());
             }
         }
     }
