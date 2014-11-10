@@ -51,7 +51,7 @@ public class Parking extends Bonus {
      */
 
     public void action(Joueur player) {
-        player.setFortune(player.getFortune() + montant);
+        player.gagnerArgent(montant);
         System.out.println(player +" s'est arrêté sur la case parking, et touche "+montant+"$");
         montant = 0;
     }

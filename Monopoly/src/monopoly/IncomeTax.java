@@ -21,15 +21,21 @@ public class IncomeTax extends Bonus {
      */
     public void action(Joueur player) {
         int montant_paye;
+        try{
         if (player.getFortune() * 0.1 < 200) {
             montant_paye = (int) (player.getFortune() * 0.1);
-            player.setFortune(player.getFortune()-montant_paye); 
+            player.payer(montant_paye); 
         } else {
             montant_paye =200;
-            player.setFortune(player.getFortune() - 200);
+            player.payer(200);
             
         }
         System.out.println(player+" paye l'impôt sur le revenu, et perd "+montant_paye+"$");
+        }
+        catch(NoMoreMoneyException e){
+            
+        }
+        
     }
 
     public String toString() {
