@@ -8,6 +8,21 @@ public class Utilitaire extends CaseAchetable {
         super();
     }
     
+    public Utilitaire(String nom, int position, int prix) {
+        super(nom, position, prix);
+    }
+    
+    public String toString(){
+        
+        if (proprietaire == NULL){
+            return(+ nom + " coût : " + prix + " - sans propriétaire");
+        }
+        
+        else {
+            return(+ nom + " coût : " + prix + " - " + proprietaire.getNom());
+        }
+    }
+    
     public int loyer () {
         
         if (proprietaire == NULL){
