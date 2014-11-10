@@ -14,11 +14,11 @@ public class Rue extends CaseAchetable {
     int prixMaison;
     boolean hotel;
     
-    Rue(String nom, int position, int prix, int nM, int prixM, boolean hotel){
+    Rue(String nom, int position, int prix, int prixM){
         super(nom, position, prix);
-        nMaison=nM;
+        nMaison=0;
         prixMaison=prixM;
-        this.hotel=hotel;
+        hotel=false;
     }
     
     public void action(Joueur j){
@@ -55,7 +55,7 @@ public class Rue extends CaseAchetable {
     
     public int calcLoyer(){
         float c=getPosition()/10;
-        int a=(int) c; //coefficient du cout en fonction de la position    
+        int a=(int) c+1; //coefficient du cout en fonction de la position    
         int b=1000;//coefficient du cout en fonction des maisons et hotel
  
         int cout;
@@ -71,13 +71,13 @@ public class Rue extends CaseAchetable {
     }
     
     
-    public void toString(){
+    public String toString(){
         if(proprietaire==null){
-            System.out.println(getNom()+" (coût : "+prix+" )  - sans propriétaire");
+            return getNom()+" (coût : "+prix+" )  - sans propriétaire";
         }
         else{
-            System.out.println(getNom()+" (coût : "+prix+" )  - propriétaire : " + proprietaire.getNom()+
-                    ", "+nMaison+" maisons"+", loyer = "+calcLoyer());
+            return getNom()+" (coût : "+prix+" )  - propriétaire : " + proprietaire.getNom()+
+                    ", "+nMaison+" maisons"+", loyer = "+calcLoyer();
         }
     }
 }
