@@ -17,6 +17,7 @@ public class Joueur {
     private LinkedList<CaseAchetable> propriete;
     private boolean enPrison;
     private int jourEnPrison;
+    private Plateau plateauJeu;
    
    Joueur(){
     nom = new String();
@@ -69,5 +70,11 @@ public class Joueur {
     public void setJourEnPrison(int jourEnPrison) {
         this.jourEnPrison = jourEnPrison;
     }
-   
+    public void ajouterJourEnPrison(){
+        this.jourEnPrison=jourEnPrison+1;
+    }
+    public int paiement(Joueur j1,int somme){
+        this.fortune-=somme;
+        j1.fortune+=somme;
+    }
 }
