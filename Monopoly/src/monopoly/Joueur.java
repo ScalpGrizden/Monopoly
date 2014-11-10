@@ -111,15 +111,23 @@ public class Joueur {
         return ((int)Math.floor(Math.random()*6))+1;
     }
     public void tourDeJeu()throws NoMoreMoneyException{
-        this.caseActuelle = this.plateauJeu.avance(caseActuelle, lanceLeDe());
-        System.out.println("Le Joueur " + this.nom + " est en ");
-        if(caseActuelle instanceof CaseAchetable){
-            if(((CaseAchetable) caseActuelle).getProprietaire() == null){
-                this.acheter((CaseAchetable)caseActuelle);
+        if (this.enPrison){
+            this.caseActuelle.action(this);
+        }
+        else {
+            this.caseActuelle = this.plateauJeu.avance(caseActuelle, lanceLeDe());
+            System.out.println("Le Joueur " + this.nom + " est en ");
+            if(caseActuelle instanceof CaseAchetable){
+                if(((CaseAchetable) caseActuelle).getProprietaire() == null){
+                    this.acheter((CaseAchetable)caseActuelle);
+                }
+                else{
+                    this.payerJoueur(((CaseAchetable)caseActuelle).getProprietaire(), ((CaseAchetable)caseActuelle).calcLoyer());
+                }
             }
-        }
-        else{
-            this.payerJoueur(((CaseAchetable)caseActuelle).getProprietaire(), ((CaseAchetable)caseActuelle).calcLoyer());
-        }
+            else if(caseActuelle instanceof Bonus){
+                this.caseActuelle.action(this);
+            }
+        } 
     }
 }
