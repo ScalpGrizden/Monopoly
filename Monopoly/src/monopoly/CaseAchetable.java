@@ -36,7 +36,7 @@ abstract class CaseAchetable extends Case {
     
     public void acheter(Joueur player) {
         proprietaire = player;
-        player.acheter(this);
+        player.setFortune(player.getFortune()-prix);//le joueur doit payer pour acheter la propriete
         
     }
     
