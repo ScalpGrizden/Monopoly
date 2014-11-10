@@ -28,8 +28,8 @@ public class Prison extends Bonus{
     public void action(Joueur j){
         if (j.getEnPrison() && j.getJourEnPrison()<= 3){
             int de1, de2;
-            de1=Plateau.LanceLeDe();
-            de2=Plateau.LanceLeDe();
+            de1=Joueur.lanceLeDe();
+            de2=Joueur.lanceLeDe();
             if(de1==de2){
                 j.setEnPrison(false);
                 j.setJourEnPrison(0);
