@@ -53,6 +53,10 @@ public class Plateau {
         l.add(39, new Rue("rue de la chenille carnivore", 39, 27000, 1500));
         l.add(12, new Utilitaire("Electric Company",12,15000));
         l.add(26, new Utilitaire("Water Works",26,15000));
+        l.add(5,new Gare("Gare Montparnasse",5,20000));
+        l.add(15,new Gare("Gare de Lyon",15,20000));
+        l.add(25,new Gare("Gare du Nord",25,20000));
+        l.add(35,new Gare("Gare Saint Lazare",35,20000));
         
         return l;
     }
