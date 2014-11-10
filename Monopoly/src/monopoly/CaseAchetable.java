@@ -58,7 +58,7 @@ abstract class CaseAchetable extends Case {
     
     
     @Override
-    public void action(Joueur player){
+    public void action(Joueur player) throws NoMoreMoneyException {
         if (proprietaire == null){
             // proposer d'acheter?
         }
@@ -67,13 +67,10 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                try {
+               
                     player.payer(calcLoyer(),proprietaire);
-                } catch (NoMoreMoneyException ex) {
-                    player.setFortune(0);
-                    System.out.println("Le joueur "+player.getNom()+" n'a plus d'argent.");
-                }
-            }
+                
+                  }
         }
     }
     
