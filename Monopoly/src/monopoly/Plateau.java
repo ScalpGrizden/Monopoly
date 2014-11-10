@@ -21,13 +21,13 @@ public class Plateau {
     }
     
     public int nbGares(Joueur j) {
-        int nbgares=0;
+        int nbGares=0;
         for (Case c : listeCases) {
             if ((c instanceof Gare) &&(c.getProprietaire()==j)) {
-                nbgares++;
+                nbGares++;
             }
         }
-        return nbgares;
+        return nbGares;
     }
     
     public void affiche() {
@@ -37,6 +37,6 @@ public class Plateau {
     }
     
     public Case avance(Case c, int d) {
-        return listeCases[c.getPosition()+d];
+        return listeCases.get(c.getPosition()+d);
     }
 }
