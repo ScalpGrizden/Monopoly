@@ -19,4 +19,17 @@ public class Gare extends CaseAchetable {
     public int calcLoyer() {
         return (this.getProprietaire().getPlateau().nbGares(this.getProprietaire()) * COEFGARE);
     }
+    
+    public String toString(){
+        String r;
+        
+        if (this.getProprietaire() == null) {
+            r = this.getNom() + " (coût : " + this.getPrix() + " €) - sans propriétaire";
+        }
+        else {
+            r = this.getNom() + " (coût : " + this.getPrix() + " €) - " + this.getProprietaire().getNom() + " - loyer : " + this.calcLoyer();
+        }
+        
+        return r;
+    }
 }
