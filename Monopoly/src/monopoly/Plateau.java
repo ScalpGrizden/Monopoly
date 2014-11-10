@@ -29,8 +29,31 @@ public class Plateau {
     
     public ArrayList<Case> initPlateau(){
         ArrayList<Case> l=new ArrayList<Case>(40);
+        l.add(1, new Rue("rue de la distilerie",1,8000, 800));
+        l.add(3, new Rue("rue du pilori", 3, 10000, 800));
+        l.add(6, new Rue("rue Jeanne D'Arc",6,11000, 800));
+        l.add(8, new Rue("rue Duguay Trouin", 8, 11000, 800));
+        l.add(9, new Rue("route de la Joneliere", 9, 12000, 800));
+        l.add(11, new Rue("rue de l'église", 11, 13000, 900));
+        l.add(13,  new Rue("Cours des 50 otages", 13, 13000, 900));
+        l.add(14, new Rue("rue Paul Bellamy", 14, 14000, 900));
+        l.add(16,  new Rue("rue du crébillon", 16, 15000, 900));
+        l.add(18, new Rue("rue du Général De Gaulle", 18, 15000, 900));
+        l.add(19, new Rue("rue de Budapest", 19, 16000, 900));
+        l.add(21, new Rue("rue de Feltre", 21, 17000, 1000));
+        l.add(23, new Rue("Avenue Matignon", 23, 17000, 1000));
+        l.add(24, new Rue("rue des tilleuls", 24, 18000, 1000));
+        l.add(26, new Rue("route du rhum", 26, 19000, 1000));
+        l.add(27, new Rue("rue des 3 rois mages", 27, 19000, 1000));
+        l.add(29, new Rue("rue Charlemagne", 29, 20000, 1000));
+        l.add(31, new Rue("rue du calvaire", 31, 21000, 1500));
+        l.add(32, new Rue("rue Jean De La Fontaine", 32, 21000, 1500));
+        l.add(34, new Rue("rue Dominique Strauss-Kahn", 34, 22000, 1500));
+        l.add(37,  new Rue("rue du lapin nain", 37, 25000, 1500));
+        l.add(39, new Rue("rue de la chenille carnivore", 39, 27000, 1500));
         l.add(12, new Utilitaire("Electric Company",12,15000));
         l.add(26, new Utilitaire("Water Works",26,15000));
+        
         return l;
     }
 
