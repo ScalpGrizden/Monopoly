@@ -78,10 +78,10 @@ public class Plateau {
     public void partie(){
         while(!finDePartie()){
             for(Joueur j : listeJoueurs){
-                j.tourDeJeu();
+                try{j.tourDeJeu();}
                 
                 //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
-                catch (NoMoreMoney){
+                catch (NoMoreMoneyException n){
                     listeJoueurs.remove(j);
                     System.out.println( j.getNom() +" est un loooooooooser(une chiasse)");
                 }
