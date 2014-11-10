@@ -18,7 +18,10 @@ public class CarteCaisseCommunautaire {
     void effet(Joueur j){
         
         j.setFortune(j.getFortune()+argent);
+        if (j.getPosition()+position>=40) {
+        j.setFortune(j.getFortune()+20000);
         j.setPosition((j.getPosition()+position)%40);
+        }
         
         if (prison) {
             j.setPosition(10);
