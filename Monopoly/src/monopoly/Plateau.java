@@ -39,7 +39,7 @@ public class Plateau {
     public int nbGares(Joueur j) {
         int nbGares=0;
         for (Case c : listeCases) {
-            if ((c instanceof Gare) &&(c.getProprietaire()==j)) {
+            if ((c.getClass().getSimpleName().equals("Gare")) && (((CaseAchetable)c).getProprietaire()==j)) {
                 nbGares++;
             }
         }
