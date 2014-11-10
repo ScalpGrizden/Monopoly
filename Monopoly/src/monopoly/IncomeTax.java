@@ -13,8 +13,8 @@ public class IncomeTax extends Bonus {
     private String nom;
     private int position;
 
-    public IncomeTax(String nom, int position) {
-        super(nom, position);
+    public IncomeTax() {
+        super("Impôt sur le revenu", 4);
     }
     /*
      * Modifie la fortune du joueur : -10% de sa fortune, plafonné à 200$

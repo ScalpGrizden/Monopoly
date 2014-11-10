@@ -15,10 +15,12 @@ public class Monopoly {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Parking Parking = new Parking(); //position 20
-        IncomeTax IncomeTax = new IncomeTax (); //position 4
-        LuxuryTax LuxuryTax = new LuxuryTax (); //position 38
-        Depart Depart=new Depart(); // position 0
+        Parking parking = new Parking(); //position 20
+        IncomeTax incomeTax = new IncomeTax (); //position 4
+        LuxuryTax luxuryTax = new LuxuryTax (); //position 38
+        Prison prison = new Prison(); //position 10
+        AllezEnPrison allezEnPrison=new AllezEnPrison(); //position 30
+        Depart depart=new Depart(); // position 0
         Plateau p = new Plateau();
         //La suite est triviale.
         while (p.getListeJoueurs().size()>1){
