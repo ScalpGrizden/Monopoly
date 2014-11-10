@@ -4,10 +4,14 @@
  */
 package monopoly;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author avinesse
  */
 public class Chance extends Pioche {
+    
+    ArrayList<CarteChance> ListeCartesChance ;
     
 }
