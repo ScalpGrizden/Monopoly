@@ -16,7 +16,7 @@ public class CaisseCommunautaire extends Pioche{
     ArrayList<CarteCaisseCommunautaire> listeCartesCaisseCommunautaire;
     
     public CaisseCommunautaire(String nom, int position){
-        super("Caisse Communautaire",position);
+        super(nom,position);
        listeCartesCaisseCommunautaire= new ArrayList<CarteCaisseCommunautaire>();
        for (int i=0;i<2;i++){
            /* 2 cartes prison, 8 argent, 6 position) */
