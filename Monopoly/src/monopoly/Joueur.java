@@ -79,16 +79,29 @@ public class Joueur {
     public void gagnerArgent(int somme){
         this.fortune+=somme;
     }
-    public void payer(int somme){
-        this.fortune-=somme;   
+    public void payer(int somme, Joueur j) throws NoMoreMoneyException{
+        if(this.fortune > somme){
+            this.fortune-=somme;
+            j.setFortune(j.getFortune()+somme);
+        }else{
+            this.fortune = 0;
+            throw(new NoMoreMoneyException());
+        }
     }
-    public void payerJoueur(Joueur j, int somme){
-        //try
+    public void payer(int somme) throws NoMoreMoneyException{
+        if(this.fortune > somme){
+            this.fortune-=somme; 
+        }else{
+            this.fortune = 0;
+            throw(new NoMoreMoneyException());
+        }
+    }
+    public void payerJoueur(Joueur j, int somme)throws NoMoreMoneyException{
         this.payer(somme);
         j.gagnerArgent(somme);
     }
 
-    public void acheter(CaseAchetable c){
+    public void acheter(CaseAchetable c)throws NoMoreMoneyException{
         this.propriete.add(c);
         payer(c.getPrix());
         c.setProprietaire(this); 
@@ -96,7 +109,7 @@ public class Joueur {
     public static int lanceLeDe(){
         return ((int)Math.floor(Math.random()*6))+1;
     }
-    public void tourDeJeu(){
+    public void tourDeJeu()throws NoMoreMoneyException{
         this.caseActuelle = this.plateauJeu.avance(caseActuelle, lanceLeDe());
         System.out.println("Le Joueur " + this.nom + " est en ");
         if(caseActuelle instanceof CaseAchetable){

@@ -14,8 +14,8 @@ public class Parking extends Bonus {
     private int position;
     private int montant;
 
-    public Parking(String nom, int position) {
-        super(nom, position);
+    public Parking() {
+        super("Parking", 20);
         montant = 0;
     }
     /*
