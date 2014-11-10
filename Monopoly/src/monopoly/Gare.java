@@ -4,7 +4,6 @@
  */
 package monopoly;
 
-
 /**
  *
  * @author rlebail
