@@ -10,16 +10,16 @@ package monopoly;
  */
 public class CarteChanceAnniversaire extends CarteChance {
     
-    CarteChanceAnniversaire(String t, String d, int a, int pos, boolean prizzoooooon) {
-        super (t,d,a,pos, prizzoooooon);
+public CarteChanceAnniversaire(String t, String d, int a, int pos, boolean prizzoooooon) {
+        super (t,a,pos, prizzoooooon);
         
     }
     
-public void effect (Joueur j, Plateau p) {
-    for (Joueur joueur : p.listeJoueurs) 
+public void effect (Joueur j) {
+    for (Joueur joueur : j.getPlateau().getListeJoueurs()) 
     {
-        joueur.fortune = joueur.fortune - argent;
-        j.fortune = j.fortune + argent;
+        joueur.setFortune(joueur.getFortune() - argent);
+        j.setFortune(j.getFortune() + argent);
     }
 }
     

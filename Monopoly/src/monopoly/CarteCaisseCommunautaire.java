@@ -15,14 +15,14 @@ public class CarteCaisseCommunautaire {
     boolean prison;
     
     
-    void action(Joueur j){
+    void effet(Joueur j){
         
-        j.fortune = j.fortune+argent;
-        j.position = j.position+position;
+        j.setFortune(j.getFortune()+argent);
+        j.setPosition(j.getPosition()+position);
         
         if (prison) {
-            j.position = 10;
-            j.enPrison = true;}
+            j.setPosition(10);
+            j.setEnPrison(true);}
     }
     
     public CarteCaisseCommunautaire(int argent, int position, boolean prison) {

@@ -2,9 +2,10 @@ package monopoly;
 
 abstract class CaseAchetable extends Case {
     
-    private Joueur proprietaire;
+    protected Joueur proprietaire;
     private int prix;
-    Boolean isHypotheque;
+    boolean isHypotheque;
+    
     
     
     public CaseAchetable(String nom, int position, int prx) {
@@ -35,20 +36,22 @@ abstract class CaseAchetable extends Case {
     
     public void acheter(Joueur player) {
         proprietaire = player;
-        player.acheter(this);
+        player.setFortune(player.getFortune()-prix);//le joueur doit payer pour acheter la propriete
         
     }
     
     public void hypotheque() {
         if (isHypotheque) {
-            proprietaire.payer(prix/2);
+            proprietaire.setFortune(proprietaire.getFortune()-prix/2);
             isHypotheque = false;
         }
         else {
-            proprietaire.gagner(prix/2);
+            proprietaire.setFortune(proprietaire.getFortune()+prix/2);
             isHypotheque = true;
         }
     }
+    
+    
     
     public void action(Joueur player){
         if (proprietaire == null){
@@ -59,8 +62,7 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                player.payer(calcLoyer());
-                proprietaire.gagner(calcLoyer());
+                player.paiementJoueur(proprietaire,calcLoyer());
             }
         }
     }

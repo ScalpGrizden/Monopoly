@@ -12,10 +12,13 @@ import java.util.ArrayList;
  */
 public class Chance extends Pioche {
     
-    ArrayList<CarteChance> ListeCartesChance;
+    ArrayList<CarteChance> listeCartesChance;
     
-    Chance() {
-        super();
-    }
-    
+    /*public Chance() {
+        listeCartesChance= new ArrayList<CarteChance>();
+       for (int i=0;i<16;i++){
+           CarteChance c= new CarteChance(t,d,argent,position,prison);
+       }
+    }*/
+   
 }
