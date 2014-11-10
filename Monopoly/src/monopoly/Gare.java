@@ -16,11 +16,11 @@ public class Gare extends CaseAchetable {
         super();
     }
     
-    public Gare(int prix) {
-        super(prix);
+    public Gare(String nom, int position, int prix) {
+        super(nom, position, prix);
     }
     
-    public int calculLoyer() {
+    public int calcLoyer() {
         return (this.getProprietaire().getPlateau().nbGares(this.getProprietaire()) * COEFGARE);
     }
 }
