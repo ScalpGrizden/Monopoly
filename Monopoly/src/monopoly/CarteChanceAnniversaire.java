@@ -10,8 +10,8 @@ package monopoly;
  */
 public class CarteChanceAnniversaire extends CarteChance {
     
-public CarteChanceAnniversaire(String t, int a, int pos, boolean prizzoooooon) {
-        super(t,a, pos, prizzoooooon);
+public CarteChanceAnniversaire(int a, int pos, boolean prizzoooooon) {
+        super(a, pos, prizzoooooon);
         description = createDescription(a, pos, prizzoooooon);
   
     }
