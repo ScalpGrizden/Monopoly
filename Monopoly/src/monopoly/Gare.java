@@ -4,8 +4,6 @@
  */
 package monopoly;
 
-import java.lang.Math;
-
 /**
  *
  * @author rlebail
