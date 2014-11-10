@@ -6,18 +6,18 @@ import java.util.*;
 public class Plateau {
     
     private ArrayList<Case> listeCases;
-    private ArrayList<Joueur> listeJoueurs;
+    private LinkedList<Joueur> listeJoueurs;
     
     
   
-    public Plateau (ArrayList<Case> l1, ArrayList<Joueur> l2) {
+    public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
     }
     
     public Plateau () {
-        this.listeCases=new ArrayList<Case>();
-        this.listeJoueurs= new ArrayList<Joueur>();
+        this.listeCases=new ArrayList<Case>(40);
+        this.listeJoueurs= new LinkedList<Joueur>();
     }
     
     public int nbGares(Joueur j) {
