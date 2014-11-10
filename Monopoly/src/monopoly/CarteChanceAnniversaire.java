@@ -15,8 +15,8 @@ public CarteChanceAnniversaire(String t, String d, int a, int pos, boolean prizz
         
     }
     
-public void effect (Joueur j, Plateau p) {
-    for (Joueur joueur : p.getListeJoueurs()) 
+public void effect (Joueur j) {
+    for (Joueur joueur : j.getPlateau().getListeJoueurs()) 
     {
         joueur.setFortune(joueur.getFortune() - argent);
         j.setFortune(j.getFortune() + argent);
