@@ -12,8 +12,8 @@ public class LuxuryTax extends Bonus{
     private String nom;
     private int position;
 
-    public LuxuryTax(String nom, int position) {
-        super(nom,position);
+    public LuxuryTax() {
+        super("Taxe de luxe",38);
     }
     /*
      * Retire 75$ de la fortune du joueur
