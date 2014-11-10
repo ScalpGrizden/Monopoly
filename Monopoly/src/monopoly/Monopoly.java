@@ -17,5 +17,7 @@ public class Monopoly {
         // TODO code application logic here
         Plateau p = new Plateau();
         //La suite est triviale.
+        
+        
     }
 }
