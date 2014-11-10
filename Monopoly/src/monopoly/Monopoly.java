@@ -15,7 +15,14 @@ public class Monopoly {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
         Plateau p = new Plateau();
         //La suite est triviale.
+        while (p.getListeJoueurs().size()>1){
+            p.tourDeJeu();
+        }
+        System.out.println("La partie est terminée, le joueur "
+                +p.getListeJoueurs().getFirst().getNom()+" a gagné la partie");
+                
     }
 }
