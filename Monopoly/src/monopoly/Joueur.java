@@ -29,8 +29,8 @@ public class Joueur {
    public String getNom(){
        return this.nom;
    }
-   public Case getPosition(){
-       return this.caseActuelle;
+   public int getPosition(){
+       return this.caseActuelle.getPosition();
    }
    public int getFortune(){
        return this.fortune;
@@ -51,8 +51,8 @@ public class Joueur {
         this.nom = nom;
     }
 
-    public void setPosition(Case c) {
-        this.caseActuelle = c;
+    public void setPosition(int p) {
+        this.caseActuelle = this.plateauJeu.getListeCases().get(p);
     }
 
     public void setFortune(int fortune) {
