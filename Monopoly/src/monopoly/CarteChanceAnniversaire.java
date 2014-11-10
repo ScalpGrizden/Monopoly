@@ -10,9 +10,10 @@ package monopoly;
  */
 public class CarteChanceAnniversaire extends CarteChance {
     
-public CarteChanceAnniversaire(String t, String d, int a, int pos, boolean prizzoooooon) {
-        super (t,a,pos, prizzoooooon);
-        
+public CarteChanceAnniversaire(String t, int a, int pos, boolean prizzoooooon) {
+        super(t,a, pos, prizzoooooon);
+        description = createDescription(a, pos, prizzoooooon);
+  
     }
     
 public void effect (Joueur j) {
@@ -22,5 +23,12 @@ public void effect (Joueur j) {
         j.setFortune(j.getFortune() + argent);
     }
 }
+
+ private String createDescription(int argent, int position, boolean prison) {
+        String Str;
+        Str="C'est votre anniversaire ! Chaque joueur doit vous donner "+argent+" euros !";   
+        return Str;
     
+    }
+ 
 }

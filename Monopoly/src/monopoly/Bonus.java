@@ -8,7 +8,7 @@ package monopoly;
  *
  * @author rmeyer
  */
-public abstract class Bonus {
+public abstract class Bonus extends Case{
     private int position;
     private String nom;
     /*
@@ -16,8 +16,7 @@ public abstract class Bonus {
      * @param position la position de la case Bonus
      */
     public Bonus(String nom,int position){
-        this.nom=nom;
-        this.position=position;
+        super(nom,position);
     }
     
     //Action à déclencher lorsque le joueur passe sur la case Bonus
