@@ -15,7 +15,9 @@ public class Monopoly {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        
+        Parking Parking = new Parking("Parking",20);
+        IncomeTax IncomeTax = new IncomeTax ("Impôt sur le revenu",4);
+        LuxuryTax LuxuryTax = new LuxuryTax ("Taxe de luxe",38);
         Plateau p = new Plateau();
         //La suite est triviale.
         while (p.getListeJoueurs().size()>1){
