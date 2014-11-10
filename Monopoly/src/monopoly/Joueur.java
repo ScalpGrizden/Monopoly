@@ -29,7 +29,7 @@ public class Joueur {
    public String getNom(){
        return this.nom;
    }
-   public Case getCaseActuelle(){
+   public Case getPosition(){
        return this.caseActuelle;
    }
    public int getFortune(){
@@ -51,7 +51,7 @@ public class Joueur {
         this.nom = nom;
     }
 
-    public void setCaseActuelle(Case c) {
+    public void setPosition(Case c) {
         this.caseActuelle = c;
     }
 
@@ -96,14 +96,7 @@ public class Joueur {
             throw(new NoMoreMoneyException());
         }
     }
-    public void payer(int somme) throws NoMoreMoneyException{
-        if(this.fortune > somme){
-            this.fortune-=somme; 
-        }else{
-            this.fortune = 0;
-            throw(new NoMoreMoneyException());
-        }
-    }
+
     public void payerJoueur(Joueur j, int somme)throws NoMoreMoneyException{
         this.payer(somme);
         j.gagnerArgent(somme);
