@@ -15,5 +15,7 @@ public class Monopoly {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Plateau p = new Plateau();
+        //La suite est triviale.
     }
 }
