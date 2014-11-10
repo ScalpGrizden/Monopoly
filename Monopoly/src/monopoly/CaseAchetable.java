@@ -1,5 +1,8 @@
 package monopoly;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 abstract class CaseAchetable extends Case {
     
     protected Joueur proprietaire;
@@ -54,6 +57,7 @@ abstract class CaseAchetable extends Case {
     
     
     
+    @Override
     public void action(Joueur player){
         if (proprietaire == null){
             // proposer d'acheter?
@@ -63,7 +67,12 @@ abstract class CaseAchetable extends Case {
                 // proposer d'acheter des maisons
             }
             else {
-                player.paiementJoueur(proprietaire,calcLoyer());
+                try {
+                    player.payer(calcLoyer(),proprietaire);
+                } catch (NoMoreMoneyException ex) {
+                    player.setFortune(0);
+                    System.out.println("Le joueur "+player.getNom()+" n'a plus d'argent.");
+                }
             }
         }
     }
