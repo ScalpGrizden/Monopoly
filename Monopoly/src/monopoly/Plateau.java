@@ -57,6 +57,14 @@ public class Plateau {
         l.add(15,new Gare("Gare de Lyon",15,20000));
         l.add(25,new Gare("Gare du Nord",25,20000));
         l.add(35,new Gare("Gare Saint Lazare",35,20000));
+        l.add(2,new CaisseCommunautaire("Caisse de communaute",2));
+        l.add(17,new CaisseCommunautaire("Caisse de communaute",17));
+        l.add(33,new CaisseCommunautaire("Caisse de communaute",33));
+        l.add(7,new Chance("Chance",7));
+        l.add(22,new Chance("Chance",22));
+        l.add(36,new Chance("Chance",36));
+        l.add(4, new IncomeTax());
+        l.add(38, new LuxuryTax());
         
         return l;
     }
