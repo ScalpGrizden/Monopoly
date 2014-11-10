@@ -4,6 +4,8 @@
  */
 package monopoly;
 
+import java.util.LinkedList;
+
 /**
  *
  * @author bchevill
@@ -13,8 +15,24 @@ public class Joueur {
     int position;
     int fortune;
     LinkedList<CaseAchetable> propriete;
-    bool enPrison;
+    boolean enPrison;
     int jourEnPrison;
    
-    
+   Joueur(){
+    nom = new String();
+    position=0;
+    fortune=100000;
+    propriete=null;
+    enPrison=false;
+    jourEnPrison=0;
+   } 
+   
+   public String GetNom(){
+       return this.nom;
+   }
+   public int GetPosition(){
+       
+   
+   }
+   
 }
