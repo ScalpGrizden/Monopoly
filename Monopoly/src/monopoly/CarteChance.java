@@ -18,9 +18,9 @@ public class CarteChance {
     
     
     
-    CarteChance(String t, String d, int a, int pos, boolean prizzoooooon) {
+    public CarteChance(String t, int a, int pos, boolean prizzoooooon) {
         titre = t;
-        description = d;
+        description = this.createDescription(a, pos, prizzoooooon);
         position = pos;
         argent = a;
         prison = prizzoooooon;
@@ -29,15 +29,32 @@ public class CarteChance {
     
     void effet(Joueur j, Plateau p) {
         
-        j.fortune = j.fortune+argent;
-        j.position = j.position+position;
+        j.setFortune(j.getFortune()+argent);
+        j.setPosition(j.getPosition() +position);
         
         if (prison) {
-            j.position = 10;
-            j.enPrison = true;
+            j.setPosition(10);
+            j.setEnPrison(true);
             
         }
         
+    }
+    
+    private String createDescription(int argent, int position, boolean prison) {
+        String Str;
+        if (argent>0) {
+         Str="Erreur de la banque en votre faveur, recevez "+argent+" euros."; 
+        }else if (argent<0) {
+         Str="Amende pour excès de vitesse, payez "+argent+" euros.";
+        }else if (position>0) {
+         Str="Avancez de "+position+" case(s).";
+        }else if (position<0) {
+         Str="Reculez de "+position+" case(s).";
+        }else if (prison) {
+         Str="Allez en prison, ne passez pas par la case départ et ne touchez pas les 200 euros.";
+        }else {
+         Str="Carte spéciale!";}          
+        return Str;
     }
     
 }

@@ -4,28 +4,28 @@ import java.util.Random;
 
 public class Utilitaire extends CaseAchetable {
     
-    public Utilitaire () {
-        super();
-    }
-    
     public Utilitaire(String nom, int position, int prix) {
         super(nom, position, prix);
     }
     
     public String toString(){
         
-        if (proprietaire == NULL){
-            return(+ nom + " coût : " + prix + " - sans propriétaire");
+        Joueur proprietaire = getProprietaire();
+        
+        if (proprietaire == null){
+            return(getNom() + " coût : " + getPrix() + " - sans propriétaire");
         }
         
         else {
-            return(+ nom + " coût : " + prix + " - " + proprietaire.getNom());
+            return(getNom() + " coût : " + getPrix() + " - " + proprietaire.getNom());
         }
     }
     
     public int calcLoyer () {
         
-        if (proprietaire == NULL){
+        Joueur proprietaire = getProprietaire();
+        
+        if (proprietaire == null){
             return(0);
         }
         

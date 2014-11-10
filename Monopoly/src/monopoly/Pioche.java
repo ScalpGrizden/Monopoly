@@ -8,6 +8,6 @@ package monopoly;
  *
  * @author rlebail
  */
-public class Pioche {
+public class Pioche extends Bonus {
     
 }
