@@ -20,4 +20,9 @@ public class IncomeTax extends Bonus{
         //Ajouter code pour retirer 200$ ou 10% du budget du joueur, selon lequel est le 
         //plus haut
     }
+    public String toString(){
+        String res="Vous payez l'impôt sur le revenu (200$ ou 10% de votre fortune)";
+        return res;
+    }
+ 
 }

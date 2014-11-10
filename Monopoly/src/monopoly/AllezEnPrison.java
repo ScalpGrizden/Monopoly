@@ -19,6 +19,7 @@ public class AllezEnPrison extends Bonus {
     * Envoi le joueur j en Prison
     * @param j 
     */
+    @Override
     public void action(Joueur j){
         j.setPosition(10);
         j.setEnPrison(true);
@@ -27,6 +28,7 @@ public class AllezEnPrison extends Bonus {
     /*
      * Methode toString
      */
+    @Override
     public String toString(){
         return "Allez en prison";
     }

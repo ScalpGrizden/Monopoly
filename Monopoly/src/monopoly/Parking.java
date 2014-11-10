@@ -45,5 +45,8 @@ public class Parking extends Bonus {
     {
         //Ajouter la méthode permettant d'augmenter l'argent du joueur
     }
-    
+    public String toString(){
+        String res="Vous ramassez l'argent déposé au parking ("+montant+")";
+        return res;
+    }
 }

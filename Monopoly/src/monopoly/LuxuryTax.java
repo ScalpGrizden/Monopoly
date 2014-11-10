@@ -19,4 +19,8 @@ public class LuxuryTax extends Bonus{
     {
         //Ajouter méthode permettant de retirer 75 $ de l'argent du joueur 
     }
+    public String toString(){
+        String res="Vous payez la taxe de luxe(75$)";
+        return res;
+    }
 }

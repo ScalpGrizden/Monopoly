@@ -1,3 +1,5 @@
+package monopoly;
+
 abstract class CaseAchetable extends Case {
     
     private Joueur proprietaire;
