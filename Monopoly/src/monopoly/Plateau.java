@@ -58,24 +58,39 @@ public class Plateau {
     }
     
     public Case avance(Case c, int d) {
+        if (c.getPosition()+d<40){
         return listeCases.get(c.getPosition()+d);
+        }
+        else { 
+        return listeCases.get(c.getPosition()+d-40);
+        }
+        
     }
     
     public Boolean finDePartie(){
+        // la partie est terminée lorqu'il n'y a plus qu'un joueur
         if (listeJoueurs.size()==1){
             partieTerminee=true;
         }
         return (partieTerminee);
     }
     
-    public void tourDeJeu(){
+    public void partie(){
         while(!finDePartie()){
             for(Joueur j : listeJoueurs){
                 j.tourDeJeu();
+                
+                //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
+                catch (NoMoreMoney){
+                    listeJoueurs.remove(j);
+                    System.out.println( j.getNom() +" est un loooooooooser(une chiasse)");
+                }
+            }
+            };
             }
             //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
-            catch (NoMoreMoney){
-                listeJoueurs.remove(j); 
-            }
+            
         }
+    }
+
 }
