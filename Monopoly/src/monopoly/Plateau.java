@@ -142,7 +142,7 @@ public class Plateau {
             }
             //si le joueur est en défaut de paiement, on le supprime de la liste de joueur
             
-        }
-    }
+        
+    
 
 }
