@@ -11,15 +11,15 @@ public class Plateau {
     
     
   
+    public Plateau () {
+        this.listeCases=new ArrayList<Case>(40);
+        this.listeJoueurs= new LinkedList<Joueur>();
+        partieTerminee=false;
+    }
     public Plateau (ArrayList<Case> l1, LinkedList<Joueur> l2) {
         this.listeCases=l1;
         this.listeJoueurs=l2;
         partieTerminee=false;
-    }
-    
-    public Plateau () {
-        this.listeCases=new ArrayList<Case>(40);
-        this.listeJoueurs= new LinkedList<Joueur>();
     }
     
     public int nbGares(Joueur j) {
